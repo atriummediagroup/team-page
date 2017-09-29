@@ -10,7 +10,7 @@ from django.utils.http import urlquote_plus
 def member_list(request):
     members = Member.objects.all()
     context = {
-        "title": "Our Team | AMG",
+        "title": "Our Team",
         "breadcrumb":"Home",
         "members":members,
     }
@@ -18,7 +18,7 @@ def member_list(request):
 
 #Displays the full post
 def member_detail(request,slug):
-    instance = get_object_or_404(Nominee,slug=slug)
+    instance = get_object_or_404(Member,slug=slug)
     context = {
         "title": instance.name + ' | ' + instance.position,
         "name": instance.name,

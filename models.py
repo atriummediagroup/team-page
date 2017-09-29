@@ -13,6 +13,10 @@ class Member(models.Model):
     content = RichTextUploadingField()
     portrait = models.FileField(upload_to='team')
     slug = models.SlugField(unique=true)
+    facebook_link = models.CharField(max_length=100,default='')
+    twitter_link = models.CharField(max_length=100,default='')
+    instagram_link = models.CharField(max_length=100,default='')
+    linkedin_link = models.CharField(max_length=100,default='')
 
 
 #inner recursive function to create a slug
