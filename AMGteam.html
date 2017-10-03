@@ -1,7 +1,10 @@
-{% block content %}
+{%extends 'base.html' %}{% load staticfiles %} {% block content %}
 <!-- tab bar -->
-
-<h1>{{title}}</h1>
+<section id="contact-section">
+    <div class="container padtop">
+		<a class="breadcrumb" href="/">{{breadcrumb}}</a>
+		
+		<h2 class="subtitle">{{title}}</h2>
 
 <div class="row"></div>
 
@@ -24,6 +27,7 @@
 
 	<!-- links to AMG social media -->
 
+	</div>
 
 
 {% endblock %}
