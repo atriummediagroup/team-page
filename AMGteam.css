@@ -1,0 +1,14 @@
+.roundimg {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.roundimg img {
+  width: auto;
+  height: 100%;
+  margin-left: -50px;
+}
