@@ -14,25 +14,28 @@
                 <!-- TODO: create a new row every 4 member -->
                 <div class="row">
                 
-	                <!-- column for each member -->
+					<!-- column for each member -->
+					{% for member in members %}
 	                <div class="col-lg-3 col-sm-6">
 	                  <div class="member">
-	                    <h3>Name</h3>
+	                    <h3>{{member.name}}</h3>
 	                      <div class="member-portrait">
-	                          <a href="{{person.slug}}">
+	                          <a href="{{member.get_absolute_url}}">
                           		<span class="hvr-rectangle-out">
                             		View Bio
                           		</span>
                           		</a>
-				      <img class="img-responsive roundimg" src="">
+				      <img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}">
 	                      </div>
 	                      <p>
-	                          Short bio
+	                      {{member.position}}
 	                      </p>
 	                  </div>
-	                </div>
+					</div>
+					{% endfor %}
 	                
-	                
+					<!-- Leave below for dev purposes -->
+					
 	                <!-- column for each member -->
 	                <div class="col-lg-3 col-sm-6">
 	                  <div class="member">
