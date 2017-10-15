@@ -27,13 +27,17 @@ p {
 
 .member-portrait{
   position: relative;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 /*Portrait List image*/
 .member-portrait img{
-  width: 250px;
+  width: 100%;
   height: 250px;
-  padding: 7px;
+  /*padding: 7px;*/
   -webkit-filter: grayscale(100%);
    -moz-filter: grayscale(100%);
    filter: grayscale(100%);
@@ -97,20 +101,4 @@ p {
   visibility: visible;
   transition: visibility 0s, opacity 0.5s linear;
   opacity: 1;
-}
-
-
-.roundimg {
-  display: inline-block;
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.roundimg img {
-  width: auto;
-  height: 100%;
-  margin-left: -50px;
 }
