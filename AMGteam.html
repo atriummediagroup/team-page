@@ -22,7 +22,7 @@
 	                    <h3>{{member.name}}</h3>
 	                      <div class="member-portrait">
 	                          <!-- Trigger the modal when span is clicked on -->
-	                          <span class="hvr-rectangle-out" data-toggle="modal" data-target="#myModal">
+	                          <span class="hvr-rectangle-out" data-toggle="modal" data-target="#{{member}}">
 		                            View Profile
 		                  </span>
 				  <img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}">
@@ -34,7 +34,7 @@
 			</div>
 			
 			<!-- Modal -->
-			<div id="myModal" class="modal fade" role="dialog">
+			<div id="{{member}}" class="modal fade" role="dialog">
 				<div class="modal-dialog">
 
 					<!-- Modal content-->
