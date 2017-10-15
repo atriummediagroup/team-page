@@ -1,69 +1,75 @@
 {%extends 'base.html' %}{% load staticfiles %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'theme/css/AMGteam.css' %}" />
 <!-- tab bar -->
 <section id="contact-section">
-    <div class="container padtop">
+	<div class="container padtop">
 		<a class="breadcrumb" href="/">{{breadcrumb}}</a>
-		
+
 		<h2 class="subtitle">{{title}}</h2>
 
-	<div class="row">
-            <div class="col-md-12">
-                <!-- <h2 class="subtitle">The AMG Team</h2> -->
+		<div class="row">
+			<div class="col-md-12">
+				<!-- <h2 class="subtitle">The AMG Team</h2> -->
 
-                <!-- Description -->
-                <!-- TODO: create a new row every 4 member -->
-                <div class="row">
-                
+				<!-- Description -->
+				<div class="row">
+
 					<!-- column for each member -->
 					{% for member in members %}
-			
-	                <div class="col-md-3">
-	                  <div class="member">
-	                    <h3>{{member.name}}</h3>
-	                      <div class="member-portrait">
-	                          <!-- Trigger the modal when span is clicked on -->
-	                          <span class="hvr-rectangle-out" data-toggle="modal" data-target="#{{member}}">
-		                            View Profile
-		                  </span>
-				  <img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}">
-	                      </div>
-	                      <p>
-	                      {{member.position}}
-	                      </p>
-	                  </div>
-			</div>
-			
-			<!-- Modal -->
-			<div id="{{member}}" class="modal fade" role="dialog">
-				<div class="modal-dialog">
 
-					<!-- Modal content-->
-					<div class="modal-content">
-					    <div class="modal-header">
-					        <button type="button" class="close" data-dismiss="modal">&times;</button>
-					        <h4 class="modal-title">{{member.name}}</h4>
-					    </div>
-					    <div class="modal-body">
-					        <img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}">
-					        <p>Full Bio</p>
-					    </div>
-					    <div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					        <p>Links to Social media pages</p>
-					    </div>
-					  </div>
+					<div class="col-md-3">
+						<div class="member">
+							<h3>{{member.name}}</h3>
+							<div class="member-portrait">
+								<!-- Trigger the modal when span is clicked on -->
+								<span class="hvr-rectangle-out" data-toggle="modal" data-target="#member-modal">
+									View Profile
+								</span>
+								<img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}">
+							</div>
+							<p>
+								{{member.position}}
+							</p>
+						</div>
+					</div>
+
+					<!-- Modal -->
+					<div id="member-modal" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">{{member.name}}</h4>
+								</div>
+								<div class="modal-body">
+									<img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}">
+									{{member.content|safe}}
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<p>Links to Social media pages</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					{% if forloop.counter|divisibleby:4 %}
 
 				</div>
+
+				<div class="row mag-row">
+				{% endif %} 
+				{% endfor %}
+
+				</div>
+
 			</div>
-			
-					{% endfor %}
-	                                
-              </div>
+		</div>
 
-        </div>
-    </div>
-
-	<!-- On click popup profile -->
+		<!-- On click popup profile -->
 		<!-- TEMPLATE FOR POPUP -->
 		<!-- Name -->
 		<!-- image -->
@@ -71,9 +77,9 @@
 		<!-- bio to the right(program, year, bio)-->
 
 
-	<!-- links to AMG social media -->
+		<!-- links to AMG social media -->
 
 	</div>
 
 
-{% endblock %}
+	{% endblock %}
