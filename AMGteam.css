@@ -36,8 +36,6 @@ p {
 /*Portrait List image*/
 .member-portrait img{
   width: 100%;
-  height: 250px;
-  /*padding: 7px;*/
   -webkit-filter: grayscale(100%);
    -moz-filter: grayscale(100%);
    filter: grayscale(100%);
