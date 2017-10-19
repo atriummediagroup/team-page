@@ -101,3 +101,9 @@ p {
   transition: visibility 0s, opacity 0.5s linear;
   opacity: 1;
 }
+
+.icon-container > .ion-social-facebook, .ion-social-twitter, .ion-social-instagram, .ion-social-linkedin{
+  font-size:2em;
+  padding:0;
+  color:#A32632;
+}
