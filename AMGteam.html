@@ -44,12 +44,38 @@
 									<h4 class="modal-title">{{member.name}}</h4>
 								</div>
 								<div class="modal-body">
-									<img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}">
-									{{member.content|safe}}
+									<img class="img-responsive roundimg" src="/uploads/{{member.portrait.url}}"> {{member.content|safe}}
 								</div>
 								<div class="modal-footer">
+									<div class="row">
+										{% if member.facebook_link != "/" %}
+										<div class="col-sm-3 text-center">
+											<a href="{{member.facebook_link}}">
+												<i class="ion-social-facebook"></i>
+											</a>
+										</div>
+										{% endif %} {% if member.twitter_link != "/" %}
+										<div class="col-sm-3 text-center">
+											<a href="{{member.twitter_link}}">
+												<i class="ion-social-twitter"></i>
+											</a>
+										</div>
+										{% endif %} {% if member.instagram_link != "/" %}
+										<div class="col-sm-3 text-center">
+											<a href="{{member.instagram_link}}">
+												<i class="ion-social-instagram"></i>
+											</a>
+										</div>
+										{% endif %} {% if member.linkedin_link != "/" %}
+										<div class="col-sm-3 text-center">
+											<a href="{{member.linkedin_link}}">
+												<i class="ion-social-linkedin"></i>
+											</a>
+										</div>
+										{% endif %}
+									</div>
+
 									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									<p>Links to Social media pages</p>
 								</div>
 							</div>
 
@@ -61,8 +87,7 @@
 				</div>
 
 				<div class="row mag-row">
-				{% endif %}
-				{% endfor %}
+					{% endif %} {% endfor %}
 
 				</div>
 
